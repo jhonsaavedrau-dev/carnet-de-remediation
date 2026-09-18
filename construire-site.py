@@ -81,7 +81,7 @@ self.addEventListener("fetch", e => {
   const req = e.request, url = new URL(req.url);
   if (req.method !== "GET" || url.origin !== location.origin) return;
   if (url.pathname.includes("/audio/")) { e.respondWith(audio(req)); return; }
-  e.respondWith(fetch(req).then(res => { if (res.ok) { const c = res.clone(); caches.open(V).then(k => k.put(req, c)); } return res; })
+  e.respondWith(fetch(req.mode === "navigate" ? new Request(req.url, { cache: "no-cache" }) : req).then(res => { if (res.ok) { const c = res.clone(); caches.open(V).then(k => k.put(req, c)); } return res; })
     .catch(() => caches.match(req).then(r => r || caches.match("./"))));
 });
 """

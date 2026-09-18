@@ -1,5 +1,5 @@
 // Service worker : page en réseau d'abord, audio mis en cache à la première écoute.
-const V = "carnet-202609181625", AUDIO = "carnet-audio";
+const V = "carnet-202609181626", AUDIO = "carnet-audio";
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(["./", "manifest.webmanifest", "icone.svg"]))); self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V && k !== AUDIO).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 async function audio(req) {
@@ -19,6 +19,6 @@ self.addEventListener("fetch", e => {
   const req = e.request, url = new URL(req.url);
   if (req.method !== "GET" || url.origin !== location.origin) return;
   if (url.pathname.includes("/audio/")) { e.respondWith(audio(req)); return; }
-  e.respondWith(fetch(req).then(res => { if (res.ok) { const c = res.clone(); caches.open(V).then(k => k.put(req, c)); } return res; })
+  e.respondWith(fetch(req.mode === "navigate" ? new Request(req.url, { cache: "no-cache" }) : req).then(res => { if (res.ok) { const c = res.clone(); caches.open(V).then(k => k.put(req, c)); } return res; })
     .catch(() => caches.match(req).then(r => r || caches.match("./"))));
 });
