@@ -7,7 +7,7 @@ App para practicar francés de B2 a C1, construida a partir de mi diagnóstico D
 ## Qué incluye
 
 - **Recorrido Remédiation.** 23 lecciones construidas sobre los errores del diagnóstico: concordancias, preposiciones, *ce que / qu'est-ce que*, subjuntivo, carta formal, registro, conectores, conclusión del exposé, números y fechas al oído.
-- **Recorrido Programme C1.1.** Estructura textual, cohesión y coherencia, résumé, compte rendu, síntesis y ensayo argumentativo con el formato del DALF C1.
+- **Recorrido Programme C1.1.** 26 lecciones: estructura textual (inversión, puesta de relieve, pasiva, puntuación avanzada), cohesión (reformulación, anáforas, discurso referido, causa, concesión, finalidad), texto académico (résumé, compte rendu, registro académico, citas) y las pruebas del DALF C1 (síntesis, ensayo, oral), con proyectos guiados.
 - **Dictées.** 14 dictados con lectura completa, grupos dictados dos veces con la puntuación, modo examen, control de velocidad y corrección automática con nota sobre 20.
 - **Accents et signes.** Más de 300 palabras para colocar é, è, ê, à, ç, ë, œ… con su pronunciación, más los pares cuyo sentido cambia con el acento.
 - **Carnet y journal.** Los errores vuelven hasta dominarlos, y cada sesión queda registrada.
