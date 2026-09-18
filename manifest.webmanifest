@@ -1,0 +1,29 @@
+{
+  "name": "Carnet de remédiation",
+  "short_name": "Carnet",
+  "lang": "fr",
+  "description": "Parcours de français B2 → C1 : leçons, dictées, accents, carnet d'erreurs.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F3F0E8",
+  "theme_color": "#F3F0E8",
+  "icons": [
+    {
+      "src": "icone.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icone-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icone-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
