@@ -1,5 +1,5 @@
 // Service worker : page en réseau d'abord, audio mis en cache à la première écoute.
-const V = "carnet-202609181626", AUDIO = "carnet-audio";
+const V = "carnet-202609181640", AUDIO = "carnet-audio";
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(["./", "manifest.webmanifest", "icone.svg"]))); self.skipWaiting(); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V && k !== AUDIO).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 async function audio(req) {

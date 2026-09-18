@@ -290,6 +290,118 @@ select{padding:10px}
 .vbar{display:flex;gap:8px;flex-wrap:wrap;min-height:60px;align-items:center}
 .vbar button{font-family:var(--serif);font-size:30px;min-width:58px;height:58px;border:1px solid var(--ink);background:var(--raise)}
 .vbar button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* ---------- explications visuelles ---------- */
+.glance{border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:16px 0 20px;margin:0 0 24px;display:grid;gap:18px}
+.glance>.eyebrow{color:var(--accent)}
+.ex{font-family:var(--serif);font-size:clamp(22px,4.6vw,30px);line-height:1.45;text-wrap:balance}
+.ex s.x,.mp s.x{color:var(--bad);text-decoration-thickness:1.5px}
+.ex u,.vs u,.mp u,.lk u,.bk u{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:5px;color:var(--accent)}
+.ex .mute,.lk .mute{color:var(--faint);text-decoration:line-through;text-decoration-color:var(--faint)}
+.ex .sp{color:var(--accent);font-family:var(--mono);font-size:.7em;vertical-align:.1em}
+.fr{border:1.5px solid var(--accent);padding:0 6px;font-weight:inherit}
+.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.vs>div{background:var(--paper);padding:14px 16px;display:grid;gap:6px;align-content:start}
+.vs .mono{color:var(--stone)}
+.vs p{margin:0;font-family:var(--serif);font-size:20px;line-height:1.4}
+.vs small{color:var(--stone);font-size:13px}
+.vs>div.no p{color:var(--bad)}
+.flow{display:flex;flex-wrap:wrap;gap:8px 0;align-items:stretch;counter-reset:fl}
+.flow b{font-weight:500;font-size:15px;border:1px solid var(--ink);padding:8px 12px;display:flex;align-items:center;gap:8px;background:var(--raise)}
+.flow b::before{counter-increment:fl;content:counter(fl);font-family:var(--mono);font-size:10px;color:var(--stone)}
+.flow b:not(:last-child)::after{content:"";width:18px;height:1px;background:var(--ink);margin-right:-31px;margin-left:4px}
+.flow b:not(:last-child){margin-right:22px}
+.flow b.hot{background:var(--ink);color:var(--paper)}
+.flow b.hot::before{color:var(--paper)}
+.bk{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:10px}
+.bk>div{border-top:2px solid var(--ink);padding-top:8px;display:grid;gap:8px;align-content:start}
+.bk h5{margin:0;font-family:var(--serif);font-weight:500;font-size:26px;line-height:1}
+.bk h5 small{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-left:6px}
+.bk p{margin:0;display:flex;flex-wrap:wrap;gap:6px}
+.bk i{font-style:normal;font-size:14px;border:1px solid var(--line);padding:3px 8px;background:var(--raise)}
+.mp{display:grid;gap:0;border-top:1px solid var(--line)}
+.mp p{margin:0;display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid var(--line);font-size:16px}
+.mp p::after{content:"→";grid-column:2;grid-row:1;text-align:center;color:var(--accent);font-family:var(--serif);font-size:20px}
+.mp p>*:first-child{grid-column:1}
+.mp p>*:last-child{grid-column:3;font-family:var(--serif);font-size:18px}
+.mp em{font-style:normal}
+.lk{position:relative;padding-top:40px;margin:0;font-family:var(--serif);font-size:clamp(20px,4.4vw,27px);line-height:2.1}
+.lk [data-from],.lk [data-to]{border-bottom:2px solid var(--accent)}
+.lk-svg{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.lk-svg path{fill:none;stroke:var(--accent);stroke-width:1.5}
+.lk-svg text{fill:var(--accent);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
+.plans>div{border:1px solid var(--line);padding:12px;display:grid;gap:8px;background:var(--raise)}
+.plans h5{margin:0;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:400}
+.plans p{margin:0;display:flex;gap:2px}
+.plans p i{flex:1;font-style:normal;font-size:12px;text-align:center;padding:10px 2px;background:var(--ink);color:var(--paper)}
+.plans p i:nth-child(2){background:var(--stone)}
+.plans p i:nth-child(3){background:var(--accent)}
+.plans p i:nth-child(4){background:var(--faint)}
+.plans small{color:var(--stone);font-size:13px}
+.tbar{display:flex;gap:2px;min-height:54px}
+.tbar i{font-style:normal;font-size:12px;padding:8px;background:var(--ink);color:var(--paper);display:flex;align-items:flex-end;min-width:0;overflow-wrap:anywhere}
+.tbar i:nth-child(2){background:var(--accent)}
+.tbar i:nth-child(3){background:var(--stone)}
+.gauge{display:grid;gap:6px}
+.gauge div{width:var(--w);background:var(--ink);color:var(--paper);font-size:12px;padding:8px 10px;white-space:nowrap}
+.gauge div.acc{background:var(--accent)}
+.pop{display:inline-flex;gap:4px;vertical-align:middle;margin-left:6px}
+.pop i{width:10px;height:10px;border-radius:50%;border:1px solid var(--ink)}
+.pop i.on{background:var(--ink)}
+.sym{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.sym p{margin:0;background:var(--paper);padding:10px;display:grid;gap:2px;text-align:center}
+.sym b{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.1}
+.sym span{font-size:12px;color:var(--stone)}
+.cross{border-collapse:collapse;font-size:14px;width:100%}
+.cross th,.cross td{border:1px solid var(--line);padding:8px;text-align:left}
+.cross th{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:400;color:var(--stone)}
+.cross td.y{color:var(--good);font-family:var(--serif);font-size:18px}
+.cross td.n{color:var(--bad);font-family:var(--serif);font-size:18px}
+.page{display:grid;grid-template-columns:1fr 1fr;gap:6px;border:1px solid var(--ink);background:var(--raise);padding:14px;max-width:360px;font-size:12px}
+.page i{font-style:normal;border:1px dashed var(--line);padding:6px 8px;color:var(--stone)}
+.page .p-date,.page .p-dest{grid-column:2;text-align:right}
+.page .p-obj,.page .p-app,.page .p-corps,.page .p-fin{grid-column:1/-1}
+.page .p-obj,.page .p-app,.page .p-fin{border-color:var(--accent);color:var(--accent);border-style:solid}
+.page .p-corps{min-height:60px}
+.page .p-sig{grid-column:2;text-align:right}
+.curve{width:100%;max-width:420px;height:auto}
+.curve path{fill:none;stroke:var(--accent);stroke-width:2}
+.curve text{fill:var(--ink);font-family:var(--serif);font-size:15px}
+.curve text.m{fill:var(--stone);font-family:var(--mono);font-size:9px;letter-spacing:.1em}
+.detail-h{margin:4px 0 12px;color:var(--stone)}
+
+/* ---------- activités visuelles ---------- */
+.sent{font-family:var(--serif);font-size:clamp(22px,4.8vw,28px);line-height:1.5;text-wrap:pretty}
+.slot{display:inline-block;min-width:74px;min-height:1.2em;border-bottom:2px solid var(--ink);padding:0 4px;margin:0 3px;color:var(--accent);font-style:italic;line-height:1.1;vertical-align:baseline}
+.slot.good{color:var(--good);border-color:var(--good)}
+.pool{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;padding:10px;border:1px dashed var(--line);margin-bottom:14px}
+.pool:empty::before{content:"Tout est placé.";color:var(--stone);font-size:14px}
+.chipb{border:1px solid var(--ink);background:var(--raise);padding:8px 12px;font-size:16px}
+.chipb[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.chipb.ok{border-color:var(--good);background:var(--good-bg)}
+.chipb.ko{border-color:var(--bad);background:var(--bad-bg)}
+.chipb small{display:block;font-family:var(--mono);font-size:10px;color:var(--bad);letter-spacing:.06em}
+.bins{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,130px),1fr));gap:10px}
+.bin{border:1px solid var(--line);background:var(--paper);display:grid;align-content:start}
+.bin .binh{width:100%;padding:10px 12px;border-bottom:2px solid var(--ink);font-family:var(--serif);font-size:22px;text-align:left;display:flex;justify-content:space-between;align-items:center}
+.bin .binh::after{content:"↓";font-family:var(--mono);font-size:12px;color:var(--stone)}
+.bin.armed .binh{background:var(--ink);color:var(--paper)}
+.bin.armed .binh::after{color:var(--paper)}
+.bin .binin{display:flex;flex-wrap:wrap;gap:6px;padding:10px;min-height:56px}
+.mcols{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+.mcol{display:grid;gap:8px;align-content:start}
+.mbtn{border:1px solid var(--line);background:var(--raise);padding:10px 12px;font-size:15px;text-align:left;display:flex;gap:8px;align-items:center;min-height:48px}
+.mbtn:hover{border-color:var(--ink)}
+.mbtn[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.mbtn .n{font-family:var(--mono);font-size:10px;min-width:18px;height:18px;display:grid;place-items:center;border:1px solid var(--line);color:var(--stone)}
+.mbtn.pair .n{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.mbtn.ok{border-color:var(--good);background:var(--good-bg)}
+.mbtn.ko{border-color:var(--bad);background:var(--bad-bg)}
+.mbtn small{display:block;font-family:var(--mono);font-size:10px;color:var(--bad)}
+@keyframes stamp{0%{transform:scale(1.6);opacity:0}60%{transform:scale(.95);opacity:1}100%{transform:scale(1)}}
+.fb h4{animation:stamp .35s ease-out}
+@media (max-width:560px){ .flow b:not(:last-child){margin-right:0} .flow b:not(:last-child)::after{display:none} .flow{gap:6px} .mp p{grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr)} }
 .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;z-index:80;max-width:calc(100% - 32px)}
 
 @media (max-width:900px){
@@ -373,6 +485,8 @@ const F=(q,acc,why,x)=>({k:"fill",q,acc,why,...x});
 const SP=(s,fix,why,x)=>({k:"spot",s,fix,why,...x});
 const O=(tokens,why,x)=>({k:"order",tokens,why,...x});
 const LI=(say,acc,why,x)=>({k:"listen",say,acc,why,num:true,...x});
+const SO=(q,cats,items,why,x)=>({k:"sort",q,cats,items,why,...x});
+const MA=(q,pairs,why,x)=>({k:"match",q,pairs,why,...x});
 
 const COURSE = [
 { id:"I", title:"Morphosyntaxe", sub:"1/5 à l'oral, et les mêmes fautes à l'écrit. C'est ici que l'on gagne le plus de points, le plus vite.",
@@ -527,7 +641,7 @@ const COURSE = [
         C("Si la mairie ___ les habitants, elle éviterait ce conflit.",["consulterait","consultait","consulte"],1,"Si + imparfait → conditionnel."),
         F("___ -vous m'indiquer la date de la réunion ? (pouvoir, politesse)",["pourriez"],"Conditionnel de politesse : pourriez-vous."),
         C("Si j'avais su, je ___ plus tôt.",["serais venu","venais","viendrais"],0,"Si + plus-que-parfait → conditionnel passé."),
-        SP("Si j'[aurais] plus de temps , je lirais la presse chaque jour .","avais","Jamais de conditionnel après si : si j'avais."),
+        SP("Si [j'aurais] plus de temps , je lirais la presse chaque jour .","j'avais","Jamais de conditionnel après si : si j'avais."),
         F("Nous ___ connaître les mesures prévues. (souhaiter)",["souhaiterions"],"Conditionnel de politesse : nous souhaiterions."),
         C("Selon les organisateurs, la course ___ 20 000 visiteurs.",["attirera","attirerait","attire"],1,"Information non confirmée : conditionnel journalistique.")
       ]}
@@ -1295,6 +1409,129 @@ const PROGRAMME = [
 ]}
 ];
 
+/* =====================================================================
+   EN UN COUP D'ŒIL — schéma visuel en tête de chaque leçon
+   ===================================================================== */
+const PAGE_LETTRE=`<div class="page"><i>Expéditeur</i><i class="p-date">Pamplona, le 18 septembre 2026</i><i class="p-dest">Madame la Maire</i><i class="p-obj">Objet : …</i><i class="p-app">Madame la Maire,</i><i class="p-corps">Introduction · désaccord · solution de remplacement</i><i class="p-fin">Je vous prie d'agréer, Madame la Maire, …</i><i class="p-sig">Signature</i></div>`;
+const VIS={
+  genre:`<div class="bk"><div><h5>la<small>féminin</small></h5><p><i>-tion</i><i>-sion</i><i>-té</i><i>-ure</i><i>-ance / -ence</i><i>-eur (abstrait)</i></p></div><div><h5>le<small>masculin</small></h5><p><i>-ment</i><i>-age</i><i>-isme</i><i>-eau</i></p></div></div>
+    <div class="vs"><div><span class="mono">Espagnol</span><p><u>el</u> método · <u>el</u> valor · <u>el</u> color · <u>la</u> leche</p></div><div><span class="mono">Français</span><p><u>la</u> méthode · <u>la</u> valeur · <u>la</u> couleur · <u>le</u> lait</p></div></div>`,
+  accord:`<p class="lk">une <span data-from="a">charge</span> de travail toujours plus <span data-to="a" data-label="féminin">lourd<u>e</u></span></p>
+    <div class="ex"><s class="x">nouveaux choses</s> → de nouvel<u>les</u> choses</div>`,
+  pp:`<p class="lk">Les <span data-from="a">lettres</span> que j'ai <span data-to="a" data-label="COD avant avoir">écrit<u>es</u></span></p>
+    <div class="vs"><div><span class="mono">COD après le verbe</span><p>Nous avons écrit une lettre.</p><small>pas d'accord</small></div><div><span class="mono">COD avant le verbe</span><p>La lettre que nous avons écrit<u>e</u>.</p><small>accord avec le COD</small></div></div>`,
+  lieu:`<div class="bk"><div><h5>en</h5><p><i>Colombie</i><i>France</i><i>Espagne</i><i>Europe</i></p></div><div><h5>au</h5><p><i>Japon</i><i>Canada</i><i>Mexique</i></p></div><div><h5>aux</h5><p><i>États-Unis</i><i>Pays-Bas</i></p></div><div><h5>à</h5><p><i>Pamplona</i><i>Paris</i><i>Bogotá</i></p></div></div>
+    <div class="ex"><s class="x">a Colombie</s> → <u>en</u> Colombie</div>`,
+  verbes:`<div class="bk"><div><h5>+ à</h5><p><i>s'opposer</i><i>participer</i><i>assister</i><i>remédier</i><i>penser</i><i>jouer (jeu)</i></p></div><div><h5>+ de</h5><p><i>dépendre</i><i>profiter</i><i>avoir besoin</i><i>se souvenir</i><i>jouer (instrument)</i></p></div></div>`,
+  synt:`<div class="vs"><div><span class="mono">Question directe</span><p><u>Qu'est-ce que</u> vous pensez ?</p></div><div><span class="mono">Après un verbe</span><p>Je me demande <u>ce que</u> vous pensez.</p></div></div>
+    <div class="mp"><p><span>Qu'est-ce que…</span><em>ce que</em></p><p><span>Qu'est-ce qui…</span><em>ce qui</em></p><p><span>Est-ce que…</span><em>si</em></p></div>`,
+  subj:`<div class="bk"><div><h5>subjonctif</h5><p><i>il faut que</i><i>bien que</i><i>pour que</i><i>je veux que</i><i>je doute que</i><i>je ne pense pas que</i></p></div><div><h5>indicatif</h5><p><i>je pense que</i><i>j'espère que</i><i>après que</i><i>il est certain que</i></p></div></div>`,
+  cond:`<div class="mp"><p><span>Si + présent</span><em>futur</em></p><p><span>Si + imparfait</span><em>conditionnel</em></p><p><span>Si + plus-que-parfait</span><em>conditionnel passé</em></p></div>
+    <div class="ex"><s class="x">Si j'aurais</s> → Si j'<u>avais</u></div>`,
+  consigne:`<div class="flow"><b>Destinataire</b><b>Tâches (souvent deux)</b><b>Registre</b><b class="hot">250 mots minimum</b></div>`,
+  lettre:PAGE_LETTRE,
+  registre:`<div class="mp"><p><s class="x">ça</s><em>cela</em></p><p><s class="x">on</s><em>nous</em></p><p><s class="x">super, trop</s><em>extrêmement</em></p><p><s class="x">les gens</s><em>les habitants</em></p><p><s class="x">je trouve pas</s><em>je <u>ne</u> trouve pas</em></p></div>`,
+  conn:`<div class="bk"><div><h5>+</h5><p><i>de plus</i><i>en outre</i></p></div><div><h5>≠</h5><p><i>cependant</i><i>néanmoins</i><i>en revanche</i></p></div><div><h5>cause</h5><p><i>en effet</i><i>puisque</i></p></div><div><h5>→</h5><p><i>par conséquent</i><i>c'est pourquoi</i></p></div><div><h5>fin</h5><p><i>en définitive</i><i>en somme</i></p></div></div>`,
+  rep:`<p class="lk">La mairie a présenté <span data-from="a">le projet</span>. Les habitants <span data-to="a" data-label="pronom">l'</span>ont critiqué.</p>
+    <div class="ex"><s class="x">À mon avis, je crois que</s> → À mon avis,</div>`,
+  ortho:`<div class="vs"><div class="no"><span class="mono">Anglais · espagnol</span><p>enterprise · address · development · example</p></div><div><span class="mono">Français</span><p>entre<u>p</u>rise · a<u>d</u>resse · dévelo<u>pp</u>ement · ex<u>e</u>mple</p></div></div>
+    <div class="mp"><p><span>a / à</span><em>a = avait possible</em></p><p><span>ou / où</span><em>où = lieu, temps</em></p><p><span>-er / -é</span><em>prendre / pris</em></p></div>`,
+  ponct:`<div class="ex">Pourquoi<span class="sp">␣</span>? · Attention<span class="sp">␣</span>: · «<span class="sp">␣</span>Oui<span class="sp">␣</span>»</div>
+    <div class="vs"><div><span class="mono">Espace avant</span><p>: ; ? !  »</p></div><div><span class="mono">Pas d'espace avant</span><p>, .</p></div></div>`,
+  "p-lettre":PAGE_LETTRE+`<div class="bk"><div><h5>8<small>types d'erreurs</small></h5><p><i>prépositions</i><i>conjugaison</i><i>accords</i><i>répétitions</i><i>consigne</i><i>orthographe</i><i>ponctuation</i><i>politesse</i></p></div></div>`,
+  plan:`<div class="flow"><b>Document</b><b>Problématique</b><b>Analyse</b><b>Comparaison</b><b>Avis</b><b class="hot">Conclusion</b></div>`,
+  concl:`<div class="flow"><b>En définitive, …</b><b>Réponse nuancée</b><b class="hot">Reste à savoir si…</b></div>`,
+  oral:`<div class="vs"><div class="no"><span class="mono">À éviter</span><p>Tu peux répéter ?</p></div><div><span class="mono">À l'examen</span><p>Pourr<u>iez-vous</u> reformuler la question ?</p></div></div>`,
+  phono:`<div class="ex">ils expérim<u>ent</u><span class="mute">ent</span> · souv<u>ent</u> [ɑ̃]</div>
+    <div class="ex">les<u>‿</u>enfants · ils<u>‿</u>ont [z] · ils sont [s]</div>`,
+  nombres:`<div class="mp"><p><span>70 = 60 + 10</span><em>soixante-dix</em></p><p><span>80 = 4 × 20</span><em>quatre-vingt<u>s</u></em></p><p><span>90 = 4 × 20 + 10</span><em>quatre-vingt-dix</em></p><p><span>3,5</span><em>trois virgule cinq</em></p></div>`,
+  dates:`<div class="mp"><p><span>le mercredi trois septembre</span><em>mer. 3/09</em></p><p><span>onze heures dix</span><em>11 h 10</em></p><p><span>trente pour cent d'entre eux</span><em>30 %</em></p></div>`,
+  "p-expose":`<div class="bk"><div><h5>69 %<small>heureux</small></h5></div><div><h5>77 %<small>l'an dernier</small></h5></div><div><h5>30 %<small>stressés</small></h5></div></div>
+    <div class="flow"><b>Document</b><b>Analyse</b><b>Nuance</b><b class="hot">Conclusion</b></div>`,
+  inv:`<div class="vs"><div><span class="mono">Courant</span><p>Est-ce que le maire a répondu ?</p></div><div><span class="mono">Soutenu</span><p>Le maire <u>a-t-il</u> répondu ?</p></div></div>
+    <div class="ex">Le télétravail, <u>affirme la sociologue</u>, est une révolution inachevée.</div>`,
+  ordre:`<div class="vs"><div><span class="mono">Avant le nom</span><p>un <u>grand</u> homme</p><small>célèbre</small></div><div><span class="mono">Après le nom</span><p>un homme <u>grand</u></p><small>de grande taille</small></div></div>
+    <div class="flow"><b>me te se nous vous</b><b>le la les</b><b>lui leur</b><b>y</b><b>en</b></div>`,
+  phrase:`<div class="flow"><b>Juxtaposition , ; :</b><b>Coordination mais, car…</b><b>Subordination qui, dont…</b></div>
+    <div class="bk"><div><h5>qui</h5><p><i>sujet</i></p></div><div><h5>que</h5><p><i>COD</i></p></div><div><h5>dont</h5><p><i>de + nom</i></p></div><div><h5>où</h5><p><i>lieu, temps</i></p></div><div><h5>auquel</h5><p><i>à + lequel</i></p></div></div>`,
+  into:`<svg class="curve" viewBox="0 0 420 160" role="img" aria-label="Intonation montante, descendante et d'énumération">
+      <path d="M10,52 C60,52 110,42 150,16"/><text x="10" y="74">Vous venez ?</text><text class="m" x="158" y="20">QUESTION ↗</text>
+      <path d="M230,16 C280,18 330,32 380,52"/><text x="230" y="74">Vous venez.</text><text class="m" x="330" y="14">AFFIRMATION ↘</text>
+      <path d="M10,126 Q45,124 80,112"/><path d="M104,126 Q139,124 174,112"/><path d="M200,112 Q270,114 330,132"/>
+      <text x="10" y="150">le stress,</text><text x="104" y="150">la fatigue</text><text x="200" y="150">et les dépenses.</text></svg>`,
+  relief:`<div class="ex"><b class="fr">C'est</b> la ponctuation <b class="fr">qui</b> pose problème.</div>
+    <div class="ex"><b class="fr">Ce qui</b> m'inquiète, <b class="fr">c'est</b> l'isolement.</div>`,
+  passif:`<div class="mp"><p><span>Les chercheurs ont publié les résultats.</span><em>Les résultats <u>ont été publiés</u> par les chercheurs.</em></p><p><span>On doit souligner que…</span><em><u>Il convient de</u> souligner que…</em></p></div>`,
+  ponct2:`<div class="vs"><div><span class="mono">Relative explicative</span><p>Les étudiants<u>,</u> qui travaillent<u>,</u> réussissent.</p><small>tous <span class="pop"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></small></div><div><span class="mono">Relative déterminative</span><p>Les étudiants qui travaillent réussissent.</p><small>certains <span class="pop"><i class="on"></i><i class="on"></i><i></i><i class="on"></i><i></i><i></i></span></small></div></div>`,
+  reform:`<div class="mp"><p><span>Les prix augmentent</span><em>l'<u>augmentation</u> des prix</em></p><p><span>voitures, bus, trains</span><em>les <u>transports</u></em></p><p><span>ce n'est pas suffisant</span><em>c'est <u>insuffisant</u></em></p></div>`,
+  argu:`<div class="flow"><b>Idée directrice</b><b>Explication</b><b>Exemple</b><b class="hot">Mini-conclusion</b></div>
+    <div class="ex"><u>Certes</u>, le télétravail réduit les trajets, <u>mais</u> il isole certains salariés.</div>`,
+  reprise:`<p class="lk"><span data-from="a">Les loyers ont doublé</span>. <span data-to="a" data-label="reprise">Cette hausse</span> inquiète les familles.</p>`,
+  rapport:`<div class="mp"><p><span>« Je suis prêt. »</span><em>qu'il <u>était</u> prêt</em></p><p><span>« J'ai fini. »</span><em>qu'il <u>avait fini</u></em></p><p><span>« Je viendrai. »</span><em>qu'il <u>viendrait</u></em></p><p><span>demain · hier</span><em>le lendemain · la veille</em></p></div>`,
+  cause:`<div class="bk"><div><h5>cause</h5><p><i>grâce à ＋</i><i>à cause de −</i><i>en raison de</i><i>faute de</i><i>puisque</i></p></div><div><h5>conséquence</h5><p><i>donc</i><i>par conséquent</i><i>si bien que</i><i>d'où</i></p></div></div>`,
+  conces:`<div class="vs"><div><span class="mono">+ subjonctif</span><p><u>Bien qu'</u>il pleuv<u>e</u>, …</p></div><div><span class="mono">+ indicatif</span><p><u>Même s'</u>il pleu<u>t</u>, …</p></div><div><span class="mono">+ nom</span><p><u>Malgré</u> la pluie, …</p></div></div>`,
+  but:`<div class="vs"><div><span class="mono">Même sujet</span><p>Je relis <u>pour</u> corriger.</p></div><div><span class="mono">Deux sujets</span><p>Je répète <u>pour que</u> tu comprenn<u>es</u>.</p></div></div>`,
+  plans:`<div class="plans"><div><h5>Dialectique</h5><p><i>Thèse</i><i>Antithèse</i><i>Dépassement</i></p><small>Faut-il… ?</small></div><div><h5>Analytique</h5><p><i>Constat</i><i>Causes</i><i>Effets</i><i>Solutions</i></p><small>Un problème à expliquer</small></div><div><h5>Thématique</h5><p><i>Aspect 1</i><i>Aspect 2</i><i>Aspect 3</i></p><small>Question ouverte, synthèse</small></div><div><h5>Comparatif</h5><p><i>Points communs</i><i>Différences</i></p><small>Deux objets</small></div></div>`,
+  notes:`<div class="sym"><p><b>→</b><span>entraîne</span></p><p><b>≠</b><span>différent</span></p><p><b>↑</b><span>hausse</span></p><p><b>↓</b><span>baisse</span></p><p><b>∅</b><span>absence</span></p><p><b>°</b><span>-tion</span></p><p><b>pb</b><span>problème</span></p><p><b>gvt</b><span>gouvernement</span></p></div>`,
+  resume:`<div class="gauge"><div style="--w:100%">Texte · 400 mots</div><div class="acc" style="--w:25%">Résumé · 100</div></div>
+    <div class="flow"><b>Thèse et plan</b><b>Idées essentielles</b><b>Reformuler</b><b class="hot">Compter</b></div>`,
+  cr:`<table class="cross"><tr><th></th><th>Résumé</th><th>Compte rendu</th></tr><tr><td>Nomme l'auteur</td><td class="n">✗</td><td class="y">✓</td></tr><tr><td>Suit l'ordre du texte</td><td class="y">✓</td><td>au choix</td></tr><tr><td>Donne votre avis</td><td class="n">✗</td><td class="n">✗</td></tr></table>`,
+  acad:`<div class="mp"><p><s class="x">montrer des choses</s><em>mettre en évidence des résultats</em></p><p><s class="x">feedback · deadline</s><em>retour · échéance</em></p><p><s class="x">tout le monde sait que</s><em>une partie des chercheurs estime que</em></p></div>`,
+  citer:`<div class="ex">Selon l'auteure, «<span class="sp">␣</span>la lecture <u>[…]</u> reste un acte de liberté<span class="sp">␣</span>» <u>(2018, p. 45)</u>.</div>`,
+  synth:`<table class="cross"><tr><th>Thème</th><th>Document 1</th><th>Document 2</th></tr><tr><td>Avantages</td><td class="y">✓</td><td class="y">✓</td></tr><tr><td>Généraliser ?</td><td class="y">oui</td><td class="n">non</td></tr><tr><td>Isolement</td><td>—</td><td class="y">✓</td></tr></table>
+    <div class="flow"><b>Titre</b><b>Convergences</b><b>Divergences</b><b class="hot">≈ 220 mots</b></div>`,
+  essai:`<div class="flow"><b>Amorce · problématique · plan</b><b>Partie 1</b><b>Partie 2</b><b class="hot">Bilan · ouverture</b></div>`,
+  oralc1:`<div class="tbar"><i style="flex:60">Préparation · 60 min</i><i style="flex:10">Exposé · 8–10 min</i><i style="flex:20">Débat · 15–20 min</i></div>`,
+  "p-synth":`<table class="cross"><tr><th>Thème</th><th>Économiste</th><th>Psychologue</th></tr><tr><td>Gain de temps</td><td class="y">✓</td><td>—</td></tr><tr><td>Isolement</td><td>—</td><td class="y">✓</td></tr><tr><td>Généraliser</td><td class="y">oui</td><td class="n">partiel</td></tr></table>`,
+  "p-resume":`<div class="gauge"><div style="--w:100%">Texte · 190 mots</div><div class="acc" style="--w:37%">Résumé · 70</div></div>`,
+  "p-essai":`<div class="plans"><div><h5>Plan dialectique</h5><p><i>Menace</i><i>Chance</i><i>À condition de…</i></p><small>L'IA menace-t-elle l'université ?</small></div></div>`,
+  "f-e":`<div class="ex">é-<u>lè</u>-ve · pro-<u>blè</u>-me · so-cié-<u>té</u></div>
+    <div class="vs"><div><span class="mono">é · son fermé</span><p>fin de syllabe</p></div><div><span class="mono">è · son ouvert</span><p>devant une syllabe muette</p></div><div class="no"><span class="mono">aucun accent</span><p>e + consonne double / x</p></div></div>`,
+  "f-circ":`<div class="mp"><p><span>fie<s class="x">s</s>ta</span><em>f<u>ê</u>te</em></p><p><span>co<s class="x">s</s>ta</span><em>c<u>ô</u>te</em></p><p><span>i<s class="x">s</s>la</span><em><u>î</u>le</em></p><p><span>ho<s class="x">s</s>pital</span><em>h<u>ô</u>pital</em></p></div>`,
+  "f-ced":`<div class="vs"><div><span class="mono">devant a, o, u</span><p><u>ç</u>a · gar<u>ç</u>on · re<u>ç</u>u</p></div><div class="no"><span class="mono">devant e, i</span><p>ceci · merci · recevoir</p></div></div>`,
+  "f-trema":`<div class="ex">na<u>·ï</u>f · ma<u>·ï</u>s · No<u>·ë</u>l</div>`,
+  "f-lig":`<div class="ex">c<u>œ</u>ur · s<u>œ</u>ur · <u>œ</u>uvre · ex <u>æ</u>quo</div>`,
+  "f-sans":`<div class="mp"><p><span>fácil</span><em>facile</em></p><p><span>música</span><em>musique</em></p><p><span>acción</span><em>action</em></p><p><span>artículo</span><em>article</em></p></div>`,
+  "f-sens":`<div class="mp"><p><span>sur · sûr</span><em>préposition · certain</em></p><p><span>du · dû</span><em>de + le · devoir</em></p><p><span>tache · tâche</span><em>salissure · travail</em></p></div>`
+};
+
+/* =====================================================================
+   ACTIVITÉS : TRIER ET RELIER
+   ===================================================================== */
+const EXTRA={
+  genre:[SO("Rangez chaque nom selon son genre.",["le","la"],[["développement",0],["société",1],["voyage",0],["culture",1],["valeur",1],["bonheur",0],["niveau",0],["méthode",1]],"-ment, -age, -eau : masculin ; -té, -ure, -eur abstrait : féminin (sauf le bonheur).")],
+  accord:[MA("Reliez le masculin et le féminin.",[["intéressant","intéressante"],["créatif","créative"],["heureux","heureuse"],["culturel","culturelle"],["nouveau","nouvelle"]],"+e · -if → -ive · -eux → -euse · consonne doublée.")],
+  pp:[SO("Le participe s'accorde-t-il ?",["accord","pas d'accord"],[["La lettre que j'ai écrite",0],["J'ai écrit une lettre",1],["Elle est partie",0],["Ils ont mangé",1],["Les erreurs qu'elle a faites",0],["Nous avons fini le rapport",1]],"être : accord avec le sujet ; avoir : accord seulement avec un COD placé avant.")],
+  lieu:[SO("Quelle préposition ?",["en","au","aux","à"],[["Colombie",0],["Japon",1],["États-Unis",2],["Paris",3],["Espagne",0],["Canada",1],["Pays-Bas",2],["Bogotá",3]],"Pays féminin : en · masculin : au · pluriel : aux · ville : à.")],
+  verbes:[SO("Quelle préposition suit le verbe ?",["à","de"],[["s'opposer",0],["dépendre",1],["participer",0],["profiter",1],["remédier",0],["avoir besoin",1],["assister",0],["se souvenir",1]],"Ces constructions s'apprennent avec le verbe.")],
+  synt:[MA("Reliez la question directe et sa forme après un verbe.",[["Qu'est-ce que… ?","ce que"],["Qu'est-ce qui… ?","ce qui"],["Est-ce que… ?","si"],["Où est-ce que… ?","où"]],"Après un verbe, jamais « qu'est-ce que ».")],
+  subj:[SO("Subjonctif ou indicatif ?",["subjonctif","indicatif"],[["il faut que",0],["je pense que",1],["bien que",0],["j'espère que",1],["pour que",0],["après que",1],["je doute que",0],["il est certain que",1]],"Doute, volonté, nécessité, concession → subjonctif ; certitude, espoir → indicatif.")],
+  cond:[MA("Reliez la condition et son résultat.",[["Si + présent","futur"],["Si + imparfait","conditionnel présent"],["Si + plus-que-parfait","conditionnel passé"]],"Jamais de conditionnel juste après si.")],
+  lettre:[MA("Reliez chaque moment de la lettre à sa formule.",[["Appel","Madame la Maire,"],["Introduction","Je me permets de vous écrire…"],["Avant la fin","Dans l'attente de votre réponse,"],["Formule finale","Je vous prie d'agréer…"]],"La formule finale reprend l'appel.")],
+  registre:[MA("Reliez le mot familier et son équivalent soutenu.",[["ça","cela"],["boulot","travail"],["super","extrêmement"],["plein de","de nombreux"],["les gens","les habitants"]],"Le registre soutenu est attendu dans une lettre officielle.")],
+  conn:[SO("Classez les connecteurs par fonction.",["ajouter","opposer","conséquence","conclure"],[["en outre",0],["cependant",1],["par conséquent",2],["en définitive",3],["de plus",0],["néanmoins",1],["c'est pourquoi",2],["en somme",3]],"Variez les connecteurs d'une même fonction.")],
+  rep:[MA("Reliez le mot usé et un mot plus précis.",[["dire","affirmer"],["problème","enjeu"],["faire","organiser"],["chose","élément"],["montrer","révéler"]],"Le mot précis évite la répétition et enrichit le lexique.")],
+  ortho:[MA("Reliez la forme anglaise ou espagnole et le mot français.",[["enterprise","entreprise"],["address","adresse"],["development","développement"],["example","exemple"],["environment","environnement"]],"Anglicismes fréquents à l'écrit.")],
+  ponct:[SO("Espace avant le signe, ou pas ?",["espace avant","pas d'espace"],[["?",0],["!",0],[":",0],[";",0],[",",1],[".",1]],"Signes doubles : espace avant ; signes simples : pas d'espace.")],
+  phono:[SO("La terminaison -ent se prononce-t-elle ?",["muette","[ɑ̃]"],[["ils parlent",0],["souvent",1],["elles lisent",0],["moment",1],["ils arrivent",0],["client",1]],"-ent verbal (ils) : muet ; -ent de nom ou d'adverbe : [ɑ̃].")],
+  nombres:[MA("Reliez le nombre et son écriture.",[["70","soixante-dix"],["80","quatre-vingts"],["91","quatre-vingt-onze"],["77","soixante-dix-sept"],["1955","mille neuf cent cinquante-cinq"]],"Le système vicésimal : 4 × 20.")],
+  ordre:[MA("Reliez l'expression et son sens.",[["un grand homme","célèbre"],["un homme grand","de grande taille"],["mon ancien professeur","ex-professeur"],["un bâtiment ancien","vieux"]],"La place de l'adjectif change le sens.")],
+  phrase:[MA("Reliez le pronom relatif et son emploi.",[["qui","sujet"],["que","COD"],["dont","de + nom"],["où","lieu ou temps"],["auquel","à + lequel"]],"Le relatif dépend de la construction du verbe.")],
+  relief:[SO("« Ce qui » ou « ce que » ?",["ce qui","ce que"],[["___ m'inquiète, c'est…",0],["___ je retiens, c'est…",1],["___ me frappe, c'est…",0],["___ nous proposons, c'est…",1]],"ce qui = sujet du verbe ; ce que = complément.")],
+  reform:[MA("Reliez le verbe et sa nominalisation.",[["augmenter","l'augmentation"],["baisser","la baisse"],["décider","la décision"],["s'isoler","l'isolement"],["réformer","la réforme"]],"La nominalisation condense la phrase.")],
+  rapport:[MA("Reliez le discours direct et le discours indirect au passé.",[["présent","imparfait"],["passé composé","plus-que-parfait"],["futur","conditionnel"],["impératif","de + infinitif"],["demain","le lendemain"]],"Concordance des temps.")],
+  cause:[SO("Cause ou conséquence ?",["cause","conséquence"],[["grâce à",0],["par conséquent",1],["puisque",0],["si bien que",1],["en raison de",0],["d'où",1],["faute de",0],["c'est pourquoi",1]],"")],
+  conces:[SO("Que faut-il après ?",["+ subjonctif","+ indicatif","+ nom"],[["bien que",0],["même si",1],["malgré",2],["quoique",0],["alors que",1],["en dépit de",2]],"bien que, quoique + subjonctif ; même si, alors que + indicatif ; malgré + nom.")],
+  but:[SO("Quel mode après ?",["subjonctif","indicatif","conditionnel"],[["pour que",0],["à moins que",0],["si",1],["au cas où",2],["afin que",0],["à condition que",0]],"au cas où + conditionnel ; si + indicatif ; le reste + subjonctif.")],
+  plans:[MA("Reliez le sujet et le plan le plus adapté.",[["Faut-il interdire les voitures en ville ?","dialectique"],["La hausse du stress au travail","analytique"],["Paris et Bogotá face au trafic","comparatif"],["Les enjeux de l'IA à l'université","thématique"]],"Le type de sujet commande le plan.")],
+  notes:[MA("Reliez le signe et son sens.",[["→","entraîne"],["≠","différent"],["↑","hausse"],["∅","absence"],["°","-tion"]],"")],
+  cr:[MA("Reliez l'intention de l'auteur et le verbe introducteur.",[["regretter","déplorer"],["recommander","préconiser"],["critiquer","dénoncer"],["concéder","reconnaître"],["questionner","s'interroger sur"]],"Le verbe introducteur dit ce que fait l'auteur.")],
+  synth:[SO("Synthèse ou essai ?",["synthèse","essai"],[["confronter les documents",0],["donner votre avis",1],["environ 220 mots",0],["250 mots minimum",1],["aucune information extérieure",0],["vos propres exemples",1]],"La synthèse est objective ; l'essai défend une thèse.")],
+  acad:[MA("Reliez l'anglicisme et le mot français.",[["feedback","retour"],["deadline","échéance"],["challenge","défi"],["meeting","réunion"],["email","courriel"]],"À l'écrit académique, préférez le mot français.")]
+};
+
+[...COURSE,...PROGRAMME].forEach(sec=>sec.units.forEach(u=>u.lessons.forEach(l=>{ if(EXTRA[l.id]&&l.items) l.items=l.items.concat(EXTRA[l.id]); })));
+
 /* Index des leçons et des exercices */
 const TRACKS=[{id:"rem",label:"Remédiation",course:COURSE},{id:"prog",label:"Programme C1.1",course:PROGRAMME}];
 const LESSONS=[]; const ITEMS={};
@@ -1371,6 +1608,7 @@ const PAIRS=[
   C("Il a ___ tout ce qu'on lui racontait.",["cru","crû"],0,"cru = participe de croire."),
   C("La rivière a ___ après les pluies.",["crû","cru"],0,"crû = participe de croître (grandir, monter).")
 ];
+PAIRS.push(MA("Reliez chaque mot à son sens.",[["sûr","certain"],["sur","préposition"],["dû","participe de devoir"],["du","de + le"],["tâche","travail"],["tache","salissure"]],"Un seul accent change le mot."));
 const accParse=e=>{ const [forms,hint]=e.split("|"); const f=forms.split("/"); return {w:f[0],alt:f.slice(1),hint:hint||""}; };
 ACC_FAM.forEach((l,n)=>{
   l.track="acc"; l.sec="Signes"; l.unit="Accents et signes"; l.n=String(n+1).padStart(2,"0");
@@ -1763,6 +2001,7 @@ function promptText(it){
   if(it.k==="listen") return "Écoute : "+it.say;
   if(it.k==="self") return it.q;
   if(it.k==="accent") return "Accents : "+accBase(it.w)+" → "+it.w;
+  if(it.k==="sort"||it.k==="match") return it.q;
   return it.q;
 }
 
@@ -2141,6 +2380,8 @@ function prep(st,it){
   if(it.k==="spot"){ st.v.toks=it.s.split(" ").map(w=>({w:w.replace(/^\[|\]$/g,""),bad:/^\[.*\]$/.test(w),p:/^[.,;:!?]$/.test(w)})); }
   if(it.k==="order"){ let o; do{o=shuffle(it.tokens.map((_,i)=>i))}while(it.tokens.length>1&&o.every((x,i)=>x===i)); st.v.bank=o; }
   if(it.k==="accent"){ st.v.tiles=accTiles(it.w); }
+  if(it.k==="sort"){ st.v.order=shuffle(it.items.map((_,i)=>i)); }
+  if(it.k==="match"){ let o; do{o=shuffle(it.pairs.map((_,i)=>i))}while(it.pairs.length>1&&o.every((x,i)=>x===i)); st.v.right=o; }
 }
 function renderStep(autoplay){
   const box=$("#player");
@@ -2150,8 +2391,11 @@ function renderStep(autoplay){
   let body="",foot="";
   if(st.kind==="theory"){
     const l=P.lesson;
+    const vis=VIS[l.id];
     body=`<div class="eyebrow">${h(P.eyebrow)}</div><h2 class="disp">${h(l.title)}</h2>
+      ${vis?`<div class="glance"><div class="eyebrow">En un coup d'œil</div>${vis}</div>`:""}
       ${hasTTS?`<div class="listen"><button class="say" data-read>${SPK} Écouter la leçon</button></div>`:""}
+      ${vis?`<div class="eyebrow detail-h">La règle en détail</div>`:""}
       <div class="theory" id="theory">${l.theory}</div>`;
     foot=`<div class="pf"><div class="wrap"><div class="pfa"><button class="btn" data-next>Commencer · ${P.steps.filter(x=>x.kind==="item").length} exercices</button></div></div></div>`;
   } else {
@@ -2161,23 +2405,54 @@ function renderStep(autoplay){
     foot=footHTML(it,st);
   }
   box.innerHTML=head+`<div class="pbody"><div class="wrap">${body}</div></div>`+foot;
+  requestAnimationFrame(()=>drawLinks(box));
   const inp=$("#ans"); if(inp&&P.phase==="answer") inp.focus();
   if(autoplay&&st.kind==="item"){ const it=getItem(st.key); if(it&&it.k==="listen") speak(it.say); }
   const pb=$(".pbody");
   if(P.lastI===P.i&&P.scroll) pb.scrollTop=P.scroll; else { pb.scrollTop=0; P.lastI=P.i; }
   pb.addEventListener("scroll",()=>{ if(P) P.scroll=pb.scrollTop; },{passive:true});
 }
+function drawLinks(root){
+  const NS="http://www.w3.org/2000/svg";
+  root.querySelectorAll(".lk").forEach(box=>{
+    const old=box.querySelector(".lk-svg"); if(old) old.remove();
+    const br=box.getBoundingClientRect(); if(!br.width) return;
+    const svg=document.createElementNS(NS,"svg"); svg.setAttribute("class","lk-svg"); svg.setAttribute("aria-hidden","true");
+    svg.setAttribute("width",br.width); svg.setAttribute("height",br.height);
+    box.querySelectorAll("[data-from]").forEach(a=>{
+      const b=box.querySelector(`[data-to="${a.dataset.from}"]`); if(!b) return;
+      const ra=a.getBoundingClientRect(), rb=b.getBoundingClientRect();
+      const x1=ra.left+ra.width/2-br.left, y1=ra.top-br.top+4, x2=rb.left+rb.width/2-br.left, y2=rb.top-br.top+4;
+      const top=Math.min(y1,y2)-26;
+      const path=document.createElementNS(NS,"path");
+      path.setAttribute("d",`M${x1},${y1} C${x1},${top} ${x2},${top} ${x2},${y2}`); svg.appendChild(path);
+      const head=document.createElementNS(NS,"path");
+      head.setAttribute("d",`M${x2-5},${y2-8} L${x2},${y2} L${x2+5},${y2-8}`); svg.appendChild(head);
+      if(b.dataset.label){ const t=document.createElementNS(NS,"text"); t.textContent=b.dataset.label;
+        t.setAttribute("x",(x1+x2)/2); t.setAttribute("y",top+2); t.setAttribute("text-anchor","middle"); svg.appendChild(t); }
+    });
+    box.appendChild(svg);
+  });
+}
+addEventListener("resize",()=>{ if(P) drawLinks($("#player")); });
+function qSlot(q,text,good){
+  const parts=String(q).split("___");
+  if(parts.length<2) return qHTML(q);
+  return parts.map(qHTML).join(`<span class="slot ${good?"good":""}" id="qslot">${text!=null&&text!==""?qHTML(text):""}</span>`);
+}
 function qHTML(q){ return h(q).replace(/&lt;(\/?)(i|b|u)&gt;/g,"<$1$2>").replace(/___/g,'<span class="blank"></span>'); }
 function itemHTML(it,st){
   const fb=P.phase==="feedback"; const a=P.ans;
   const sayBtn=t=>hasTTS?`<div class="listen"><button class="say" data-say="${h(t)}">${SPK} Écouter</button><button class="say" data-say="${h(t)}" data-rate="0.65">Lentement</button></div>`:`<p class="note small">Synthèse vocale indisponible sur cet appareil — texte : « ${h(t)} »</p>`;
   if(it.k==="choice"){
-    return `${it.say?sayBtn(it.say):""}<p class="q">${qHTML(it.q)}</p><div class="opts">${st.v.order.map((oi,j)=>{
+    const shown=fb?it.o[it.a]:(a!=null?it.o[a]:"");
+    return `${it.say?sayBtn(it.say):""}<p class="q ${it.q.includes("___")?"sent":""}">${qSlot(it.q,shown,fb)}</p><div class="opts">${st.v.order.map((oi,j)=>{
       let cls=""; if(fb){ if(oi===it.a) cls="ok"; else if(a===oi) cls="ko"; }
       return `<button class="opt ${cls}" data-opt="${oi}" aria-pressed="${a===oi}" ${fb?"disabled":""}><span class="k">${"ABCD"[j]}</span><span>${qHTML(it.o[oi])}</span></button>`}).join("")}</div>`;
   }
   if(it.k==="fill"){
-    return `<p class="q">${qHTML(it.q)}</p><input type="text" id="ans" class="fill" autocomplete="off" autocapitalize="off" spellcheck="false" value="${h(a||"")}" ${fb?"readonly":""} aria-label="Votre réponse">`;
+    const r=P.res[P.i]||{};
+    return `<p class="q ${it.q.includes("___")?"sent":""}">${qSlot(it.q,fb&&!r.ok?it.acc[0]:(a||""),fb)}</p><input type="text" id="ans" class="fill" autocomplete="off" autocapitalize="off" spellcheck="false" value="${h(a||"")}" ${fb?"readonly":""} aria-label="Votre réponse">`;
   }
   if(it.k==="listen"){
     return `<p class="q">${it.num?"Écrivez en chiffres le nombre entendu.":"Écrivez ce que vous entendez."}</p>${sayBtn(it.say)}<input type="text" id="ans" class="fill" inputmode="decimal" autocomplete="off" value="${h(a||"")}" ${fb?"readonly":""} aria-label="Votre réponse">${fb?`<p class="note" style="margin-top:12px">Transcription : « ${h(it.say)} »</p>`:""}`;
@@ -2194,6 +2469,26 @@ function itemHTML(it,st){
       <div class="answer">${sel.map((ti,j)=>`<button class="chip" data-rm="${j}" ${fb?"disabled":""}>${h(it.tokens[ti])}</button>`).join("")}</div>
       <div class="bank">${st.v.bank.map(ti=>`<button class="chip ${sel.includes(ti)?"used":""}" data-add="${ti}" ${fb?"disabled":""}>${h(it.tokens[ti])}</button>`).join("")}</div>
       ${fb?`<p class="fixline">Ordre attendu : <em class="rel">${h(it.tokens.join(" "))}</em></p>`:""}`;
+  }
+  if(it.k==="sort"){
+    const ans=a||{}, cats=it.cats;
+    const chip=i=>{ const placed=ans[i]!=null; let cls="", extra="";
+      if(fb){ const ok=ans[i]===it.items[i][1]; cls=ok?"ok":"ko"; if(!ok) extra=`<small>→ ${h(cats[it.items[i][1]])}</small>`; }
+      return `<button class="chipb ${cls}" data-chip="${i}" aria-pressed="${!fb&&P.chip===i}" ${fb?"disabled":""}>${h(it.items[i][0])}${extra}</button>`; };
+    const pool=st.v.order.filter(i=>ans[i]==null).map(chip).join("");
+    return `<p class="q">${h(it.q)}</p>${fb?"":`<p class="note small" style="margin:-14px 0 14px">Touchez un élément, puis sa catégorie. Touchez un élément placé pour le reprendre.</p>`}
+      ${fb?"":`<div class="pool">${pool}</div>`}
+      <div class="bins">${cats.map((c,b)=>`<div class="bin ${!fb&&P.chip!=null?"armed":""}"><button class="binh" data-bin="${b}" ${fb?"disabled":""}>${h(c)}</button><div class="binin">${st.v.order.filter(i=>ans[i]===b).map(chip).join("")}</div></div>`).join("")}</div>`;
+  }
+  if(it.k==="match"){
+    const ans=a||{};
+    const leftOf=j=>{ for(const k in ans) if(ans[k]===j) return +k; return null; };
+    const left=it.pairs.map((pr,i)=>{ const paired=ans[i]!=null; let cls=paired?"pair":"", extra="";
+      if(fb){ const ok=ans[i]===i; cls+=ok?" ok":" ko"; if(!ok) extra=`<small>→ ${h(it.pairs[i][1])}</small>`; }
+      return `<button class="mbtn ${cls}" data-ml="${i}" aria-pressed="${!fb&&P.ml===i}" ${fb?"disabled":""}><span class="n">${paired?i+1:""}</span><span>${h(pr[0])}${extra}</span></button>`; }).join("");
+    const right=st.v.right.map(j=>{ const li=leftOf(j); return `<button class="mbtn ${li!=null?"pair":""}" data-mr="${j}" ${fb?"disabled":""}><span class="n">${li!=null?li+1:""}</span><span>${h(it.pairs[j][1])}</span></button>`; }).join("");
+    return `<p class="q">${h(it.q)}</p>${fb?"":`<p class="note small" style="margin:-14px 0 14px">Touchez un élément à gauche, puis son partenaire à droite.</p>`}
+      <div class="mcols"><div class="mcol">${left}</div><div class="mcol">${right}</div></div>`;
   }
   if(it.k==="accent"){
     const tl=st.v.tiles, sel=a||{}; const target=[...accBase(it.w)];
@@ -2224,6 +2519,8 @@ function ready(it){
   if(it.k==="order") return a&&a.length===it.tokens.length;
   if(it.k==="self") return true;
   if(it.k==="accent") return true;
+  if(it.k==="sort") return a&&Object.keys(a).length===it.items.length;
+  if(it.k==="match") return a&&Object.keys(a).length===it.pairs.length;
 }
 function footHTML(it,st){
   if(P.phase==="answer"){
@@ -2234,10 +2531,10 @@ function footHTML(it,st){
     return `<div class="pf"><div class="wrap"><div class="fb"><h4>Correction</h4><p>${h(it.why||"")}</p></div>
       <div class="pfa"><button class="btn line" data-self="0">À revoir</button><button class="btn" data-self="1">Je l'avais</button></div></div></div>`;
   }
-  const expected=it.k==="choice"?stripTags(it.o[it.a]):it.k==="fill"||it.k==="listen"?it.acc[0]:it.k==="spot"?it.fix:it.k==="accent"?it.w:it.tokens.join(" ");
+  const expected=it.k==="choice"?stripTags(it.o[it.a]):it.k==="fill"||it.k==="listen"?it.acc[0]:it.k==="spot"?it.fix:it.k==="accent"?it.w:it.k==="sort"||it.k==="match"?"":it.tokens.join(" ");
   return `<div class="pf ${r.ok?"good":"bad"}"><div class="wrap"><div class="fb">
       <h4>${r.ok?"Exact.":r.almost?"Presque — l'accent compte.":"Correction"}</h4>
-      ${r.ok?"":`<p class="exp">Réponse attendue : ${h(expected)}</p>`}
+      ${r.ok||!expected?"":`<p class="exp">Réponse attendue : ${h(expected)}</p>`}
       <p>${qHTML(it.why||"")}</p>
       <div id="whybox"></div></div>
     <div class="pfa">${!r.ok&&sample&&!aiOff?`<button class="btn line" data-why>Pourquoi ? · Claude</button>`:""}<button class="btn" data-next>Continuer</button></div></div></div>`;
@@ -2253,6 +2550,8 @@ function grade(it,st){
   if(it.k==="spot") return {ok:a!=null&&st.v.toks[a]&&st.v.toks[a].bad};
   if(it.k==="order") return {ok:(a||[]).map(i=>it.tokens[i]).join(" ")===it.tokens.join(" ")};
   if(it.k==="accent"){ const w=accWord(st.v.tiles,a||{}); return {ok:w===it.w||(it.alt||[]).includes(w)}; }
+  if(it.k==="sort") return {ok:it.items.every((x,i)=>(a||{})[i]===x[1])};
+  if(it.k==="match") return {ok:it.pairs.every((_,i)=>(a||{})[i]===i)};
   return {ok:false};
 }
 function check(skip){
@@ -2280,12 +2579,14 @@ function selfGrade(ok){
   const st=P.steps[P.i]; const it=getItem(st.key); P.res[P.i]={ok};
   record(st,it,ok); next();
 }
-function next(){ stopAudio(); P.scroll=0; P.tile=null; P.i++; P.ans=null; P.phase="answer"; renderStep(true); }
+function next(){ stopAudio(); P.scroll=0; P.tile=null; P.chip=null; P.ml=null; P.i++; P.ans=null; P.phase="answer"; renderStep(true); }
 async function askWhy(btn){
   const st=P.steps[P.i]; const it=getItem(st.key); const box=$("#whybox"); if(!box) return;
   btn.disabled=true; box.innerHTML=`<p class="why">Claude réfléchit…</p>`;
-  const expected=it.k==="choice"?stripTags(it.o[it.a]):it.k==="spot"?it.fix:it.k==="order"?it.tokens.join(" "):it.k==="accent"?it.w:it.acc[0];
-  const given=it.k==="accent"?accWord(st.v.tiles,P.ans||{}):it.k==="choice"?(P.ans!=null?stripTags(it.o[P.ans]):"(aucune)"):it.k==="spot"?(P.ans!=null?st.v.toks[P.ans].w:"(aucune)"):it.k==="order"?(P.ans||[]).map(i=>it.tokens[i]).join(" "):(P.ans||"(aucune)");
+  const sortStr=m=>it.items.map((x,i)=>x[0]+" → "+(m[i]!=null?it.cats[m[i]]:"?")).join(" ; ");
+  const matchStr=m=>it.pairs.map((x,i)=>x[0]+" → "+(m[i]!=null?it.pairs[m[i]][1]:"?")).join(" ; ");
+  const expected=it.k==="sort"?sortStr(Object.fromEntries(it.items.map((x,i)=>[i,x[1]]))):it.k==="match"?matchStr(Object.fromEntries(it.pairs.map((_,i)=>[i,i]))):it.k==="choice"?stripTags(it.o[it.a]):it.k==="spot"?it.fix:it.k==="order"?it.tokens.join(" "):it.k==="accent"?it.w:it.acc[0];
+  const given=it.k==="sort"?sortStr(P.ans||{}):it.k==="match"?matchStr(P.ans||{}):it.k==="accent"?accWord(st.v.tiles,P.ans||{}):it.k==="choice"?(P.ans!=null?stripTags(it.o[P.ans]):"(aucune)"):it.k==="spot"?(P.ans!=null?st.v.toks[P.ans].w:"(aucune)"):it.k==="order"?(P.ans||[]).map(i=>it.tokens[i]).join(" "):(P.ans||"(aucune)");
   const prompt=`Tu es professeur de français langue étrangère. L'apprenant est hispanophone, niveau B2. Explique en français, en trois phrases maximum et sans formule d'introduction, pourquoi sa réponse est fausse, puis donne une astuce pour ne plus se tromper (en comparant avec l'espagnol si c'est utile).
 Exercice : ${stripTags(promptText(it)).replace(/___/g,"…")}
 ${it.k==="choice"?"Choix proposés : "+it.o.map(stripTags).join(" | "):""}
@@ -2387,6 +2688,12 @@ document.addEventListener("click",e=>{
   if(P.phase!=="answer") return;
   const st=P.steps[P.i]; const it=st&&st.kind==="item"?getItem(st.key):null; if(!it) return;
   if(d.opt!=null){ P.ans=+d.opt; return renderStep(); }
+  if(d.chip!=null){ const i=+d.chip, ans=Object.assign({},P.ans||{});
+    if(ans[i]!=null&&P.chip==null){ delete ans[i]; P.ans=ans; return renderStep(); }
+    P.chip=P.chip===i?null:i; if(!P.ans) P.ans={}; return renderStep(); }
+  if(d.bin!=null){ if(P.chip==null) return; const ans=Object.assign({},P.ans||{}); ans[P.chip]=+d.bin; P.ans=ans; P.chip=null; return renderStep(); }
+  if(d.ml!=null){ const i=+d.ml, ans=Object.assign({},P.ans||{}); if(ans[i]!=null){ delete ans[i]; P.ans=ans; } P.ml=P.ml===i?null:i; if(!P.ans) P.ans={}; return renderStep(); }
+  if(d.mr!=null){ if(P.ml==null) return; const j=+d.mr, ans=Object.assign({},P.ans||{}); for(const k in ans) if(ans[k]===j) delete ans[k]; ans[P.ml]=j; P.ans=ans; P.ml=null; return renderStep(); }
   if(d.tile!=null){ P.tile=+d.tile; if(!P.ans) P.ans={}; return renderStep(); }
   if(d.var!=null&&P.tile!=null){ P.ans=Object.assign({},P.ans,{[P.tile]:+d.var}); return renderStep(); }
   if(d.tok!=null){ P.ans=+d.tok; return renderStep(); }
@@ -2394,7 +2701,7 @@ document.addEventListener("click",e=>{
   if(d.rm!=null){ const a=(P.ans||[]).slice(); a.splice(+d.rm,1); P.ans=a; return renderStep(); }
 });
 document.addEventListener("input",e=>{
-  if(e.target.id==="ans"&&P&&P.phase==="answer"){ P.ans=e.target.value; const c=document.querySelector("[data-check]"); if(c){ const it=getItem(P.steps[P.i].key); c.disabled=!ready(it); } }
+  if(e.target.id==="ans"&&P&&P.phase==="answer"){ P.ans=e.target.value; const sl=$("#qslot"); if(sl) sl.textContent=e.target.value; const c=document.querySelector("[data-check]"); if(c){ const it=getItem(P.steps[P.i].key); c.disabled=!ready(it); } }
 });
 document.addEventListener("change",e=>{
   if(e.target.id==="goal"){ S.goal=+e.target.value; save(true); render(); }
